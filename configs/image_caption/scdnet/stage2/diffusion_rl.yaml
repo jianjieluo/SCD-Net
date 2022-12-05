@@ -1,0 +1,36 @@
+_BASE_: "diffusion.yaml"
+
+####################################### DATASETS #######################################
+DATASETS:
+  TRAIN: 'MSCoCoDiffusionKDDataset'
+
+###################################### DATALOADER ######################################
+DATALOADER:
+  TRAIN_BATCH_SIZE: 16
+  SEQ_PER_SAMPLE: 5
+
+  CASCADED_FILE: "{path_to_stage1_rl_prediction}"
+  KD_PRED_FILE: "../open_source_dataset/mscoco_dataset/autoregressive_teacher_pred_ep25.pkl"
+  USE_KD_TOKENS_AS_INPUT: True
+
+######################################### Engine #########################################
+ENGINE:
+  NAME: 'RLDiffusionTrainer'
+
+######################################### MODEL #########################################
+MODEL:
+  WEIGHTS: '{path_to_xe_model}'
+
+####################################### Optimizer #######################################
+SOLVER:
+  NAME: 'Adam'
+  EPOCH: 60
+  BASE_LR: 0.00001
+
+####################################### lr scheduler ####################################### 
+LR_SCHEDULER:
+  NAME: 'FixLR'
+
+####################################### losses ####################################### 
+LOSSES:
+  NAMES: []

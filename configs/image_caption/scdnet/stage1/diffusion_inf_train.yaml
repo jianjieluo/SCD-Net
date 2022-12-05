@@ -1,0 +1,17 @@
+_BASE_: 'diffusion.yaml'
+
+###################################### DATALOADER ######################################
+DATALOADER:
+  INFERENCE_TRAIN: True
+
+######################################### MODEL #########################################
+MODEL:
+  WEIGHTS: '{path_to_weights}'
+
+####################################### decode strategy ####################################### 
+DECODE_STRATEGY:
+  NAME: 'DiffusionSampler'
+  DIFFUSION: # change to best ts and td
+    TIMESTEPS: 50
+    TIME_DIFFERENCE: 0.0
+    SAMPLE_NOISE: False
