@@ -1,4 +1,4 @@
-# Semantic-Conditional Diffusion Networks for Image Captioning
+# Semantic-Conditional Diffusion Networks for Image Captioning [CVPR2023]
 
 ## Introduction
 This is the official repository for [**Semantic-Conditional Diffusion Networks for Image Captioning**](https://arxiv.org/abs/2212.03099)(SCD-Net). SCD-Net is a cascaded diffusion captioning model with a novel semantic-conditional diffusion process that upgrades conventional diffusion model with additional semantic prior. A novel guided self-critical sequence training strategy is further devised to stabilize and boost the diffusion process. 
