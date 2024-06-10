@@ -1,0 +1,24 @@
+_BASE_: './diffusion.yaml'
+
+###################################### DATALOADER ######################################
+DATALOADER:
+  CASCADED_FILE: ""
+
+######################################### Engine #########################################
+ENGINE:
+  NAME: 'BitDiffusionCascader'
+
+MODEL:
+  ENSEMBLE_WEIGHTS: [
+    'models/stage1/xe/model_Epoch_00047_Iter_0083189.pth', # stage 1 model
+    'models/stage2/xe/model_Epoch_00056_Iter_0099119.pth', # stage 2 model
+  ] # cascaded 2 diffusion models
+  MODEL_WEIGHTS: [1.0, 1.0] # cascaded 2 diffusion models
+  WEIGHTS: ''
+
+####################################### decode strategy ####################################### 
+DECODE_STRATEGY:
+  NAME: 'CascadedDiffusionSampler'
+  DIFFUSION:
+    CAS_TIMESTEPS: [50, 40] # cascaded 2 diffusion models
+    CAS_TIME_DIFFERENCE: [45.0, 0.0] # cascaded 2 diffusion models

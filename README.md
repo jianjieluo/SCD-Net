@@ -1,7 +1,7 @@
 # Semantic-Conditional Diffusion Networks for Image Captioning [CVPR2023]
 
 ## Introduction
-This is the official repository for [**Semantic-Conditional Diffusion Networks for Image Captioning**](https://arxiv.org/abs/2212.03099)(SCD-Net). SCD-Net is a cascaded diffusion captioning model with a novel semantic-conditional diffusion process that upgrades conventional diffusion model with additional semantic prior. A novel guided self-critical sequence training strategy is further devised to stabilize and boost the diffusion process. 
+This is the official repository for [**Semantic-Conditional Diffusion Networks for Image Captioning**](https://openaccess.thecvf.com/content/CVPR2023/papers/Luo_Semantic-Conditional_Diffusion_Networks_for_Image_Captioning_CVPR_2023_paper.pdf)(SCD-Net). SCD-Net is a cascaded diffusion captioning model with a novel semantic-conditional diffusion process that upgrades conventional diffusion model with additional semantic prior. A novel guided self-critical sequence training strategy is further devised to stabilize and boost the diffusion process. 
 
 To our best knowledge, SCD-Net is the first diffusion-based captioning model that achieves better performance than the naive auto-regressive transformer captioning model **conditioned on the same visual features(i.e. [bottom-up attention region features](https://github.com/peteanderson80/bottom-up-attention)) in both XE and RL training stages.** SCD-Net is also **the first diffusion-based captioning model that adopts CIDEr-D optimization successfully** via a novel guided self-critical sequence training strategy. 
 
@@ -51,15 +51,26 @@ bash configs/image_caption/scdnet/stage2/4_train_rl_update_kd.sh
 
 ```
 
+## Inference
+We have released our models in `models.zip`. To reproduce the results reported in Table 1 of the paper, please place the `models` directory in the root of the repository and run the following command:
+
+```bash
+bash configs/image_caption/scdnet/stage2/5_inference_example.sh
+```
+
+For more details, refer to the script mentioned above.
+
+
 ## Citation
-If you use this code for your research, please cite:
+If you use the code or models for your research, please cite:
 
 ```
-@article{luo2022semantic,
-  title={Semantic-Conditional Diffusion Networks for Image Captioning},
+@inproceedings{luo2023semantic,
+  title={Semantic-conditional diffusion networks for image captioning},
   author={Luo, Jianjie and Li, Yehao and Pan, Yingwei and Yao, Ting and Feng, Jianlin and Chao, Hongyang and Mei, Tao},
-  journal={arXiv preprint arXiv:2212.03099},
-  year={2022}
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={23359--23368},
+  year={2023}
 }
 ```
 
