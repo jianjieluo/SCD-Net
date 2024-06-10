@@ -16,7 +16,7 @@ SCD-Net achieves state-of-the-art performance among non-autoregressive/diffusion
 2. Download official [Bottom-up features(10 to 100 regions)](https://github.com/peteanderson80/bottom-up-attention) and preprocess them.
 
 ```bash
-python tools/create_feats.py --infeats karpathy_train_resnet101_faster_rcnn_genome.tsv.0 --outfolder ../open_source_dataset/mscoco_dataset/features/up_down
+python2 tools/create_feats.py --infeats karpathy_train_resnet101_faster_rcnn_genome.tsv.0 --outfolder ../open_source_dataset/mscoco_dataset/features/up_down
 ```
 
 ## Training
@@ -52,7 +52,7 @@ bash configs/image_caption/scdnet/stage2/4_train_rl_update_kd.sh
 ```
 
 ## Inference
-We have released our models in `models.zip`. To reproduce the results reported in Table 1 of the paper, please place the `models` directory in the root of the repository and run the following command:
+We have released our models in `models.zip`([Google Drive](https://drive.google.com/file/d/1q3A67RUDJghjp2LbMfFhTb0tMHQqu-Il/view?usp=sharing)). To reproduce the results reported in Table 1 of the paper, please place the `models` directory in the root of the repository and run the following command:
 
 ```bash
 bash configs/image_caption/scdnet/stage2/5_inference_example.sh
