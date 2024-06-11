@@ -52,7 +52,7 @@ bash configs/image_caption/scdnet/stage2/4_train_rl_update_kd.sh
 ```
 
 ## Inference
-We have released our models in `models.zip`([Google Drive](https://drive.google.com/file/d/1q3A67RUDJghjp2LbMfFhTb0tMHQqu-Il/view?usp=sharing)). To reproduce the results reported in Table 1 of the paper, please place the `models` directory in the root of the repository and run the following command:
+We have released our models in `models.zip`([Google Drive](https://drive.google.com/file/d/1q3A67RUDJghjp2LbMfFhTb0tMHQqu-Il/view?usp=sharing), [BaiduYun](https://pan.baidu.com/s/1TvxKzHoKWzvkeepYc3a7CQ), extract code: `6os2`). To reproduce the results reported in Table 1 of the paper, please place the `models` directory in the root of the repository and run the following command:
 
 ```bash
 bash configs/image_caption/scdnet/stage2/5_inference_example.sh
